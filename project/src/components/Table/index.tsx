@@ -3,8 +3,8 @@ import style from './style.module.scss'
 export default function Table() {
   return (
     <section id="Table" className={style.table}>
-      <h2>Tabela padrão</h2>
-      <table>
+      <h2 className="container">Tabela padrão</h2>
+      <table className="container">
         <thead>
           <tr>
             <th>Parcela</th>
