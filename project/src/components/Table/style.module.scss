@@ -1,0 +1,38 @@
+.table{
+  width: 100%;
+  h2{
+    padding: 0.6rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    background: var(--background);
+    color: var(--blue-secundary)
+  }
+  table{
+    border-spacing: 0;
+    width: 100%;
+    thead{
+      tr{
+        th{
+          text-align: center;
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: var(--typography);
+          border: 0.2rem solid #E5E5E5;
+          background: var(--background);
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          text-align: center;
+          font-weight: 400;
+          font-size: 2.5rem;
+          color: var(--typography);
+          border: 0.1rem solid #E5E5E5;
+        }
+      }
+    }
+  }
+}
