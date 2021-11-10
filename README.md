@@ -14,7 +14,7 @@ Esse é um desafio da [Klutch Tecnologia](https://www.klutch.com.br/) para que e
 
 - [Next](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Css](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [Sass](https://sass-lang.com/install)
 - [Mirage Js](https://miragejs.com/)
 
 ---
