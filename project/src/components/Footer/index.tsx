@@ -3,10 +3,11 @@ export default function Footer() {
   return (
     <footer id="Footer" className={style.footer}>
       <div className="container">
+        <button>
+          Voltar
+        </button>
         <div className="content">
-          <p>Nome:</p>
-          <p>Parcelas:</p>
-          <p>Valor da parcela:</p>
+          <p>Plano selecionado:</p>
         </div>
 
         <button>
