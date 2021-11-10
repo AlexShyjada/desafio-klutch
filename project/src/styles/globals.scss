@@ -1,0 +1,27 @@
+:root{
+  --blue-primary: #228a95;
+  --blue-secundary: #187680;
+  --orange-primary: #ef9c4b;
+  --orange-secundary: #fd8030;
+  --typography: #777777;
+  --background: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
