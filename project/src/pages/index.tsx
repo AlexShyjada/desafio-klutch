@@ -6,6 +6,7 @@ import Hero from '../components/Hero'
 import InputSimulacao from '../components/InputSimulacao'
 import InputClient from '../components/InputClient'
 import Table from '../components/Table'
+import ClientFound from '../components/ClientFound'
 
 const Home: NextPage = () => {
   const [formStep, setFormStep] = useState(1)
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
 
       {formStep == 2 ? <Hero title="Solicitar emprestimo" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : null}
       {formStep == 2 ? <InputClient/> : null}
+      {formStep == 2 ? <ClientFound/> : null}
 
       <Footer formStep={formStep} setFormStep={setFormStep}/>
     </>
