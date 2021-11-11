@@ -8,6 +8,7 @@ import InputClient from '../components/InputClient'
 import Table from '../components/Table'
 import ClientFound from '../components/ClientFound'
 import CredtCardForm from '../components/CredtCardForm'
+import PaymentModality from '../components/PaymentModality'
 
 const Home: NextPage = () => {
   const [formStep, setFormStep] = useState(1)
@@ -28,6 +29,9 @@ const Home: NextPage = () => {
 
       {formStep == 3 ? <Hero title="Solicitar emprestimo" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : null}
       {formStep == 3 ? <CredtCardForm/> : null}
+
+      {formStep == 4 ? <Hero title="Solicitar emprestimo" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : null}
+      {formStep == 4 ? <PaymentModality/> : null}
 
       <Footer formStep={formStep} setFormStep={setFormStep}/>
     </>
