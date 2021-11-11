@@ -9,21 +9,21 @@ import Table from '../components/Table'
 
 const Home: NextPage = () => {
   const [formStep, setFormStep] = useState(1)
+
   return (
     <>
       <Head>
         <title>Desafio Klutch</title>
       </Head>
 
-      {formStep == 1 ? <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : ""}
-      {formStep == 1 ? <InputSimulacao/> : ""}
-      {formStep == 1 ? <Table/> : ""}
+      {formStep == 1 ? <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : null}
+      {formStep == 1 ? <InputSimulacao/> : null}
+      {formStep == 1 ? <Table/> : null}
 
-      {formStep == 2 ? <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : ""}
-      {formStep == 2 ? <InputClient/> : ""}
-      {formStep == 2 ? <Table/> : ""}
+      {formStep == 2 ? <Hero title="Solicitar emprestimo" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/> : null}
+      {formStep == 2 ? <InputClient/> : null}
 
-      <Footer/>
+      <Footer formStep={formStep} setFormStep={setFormStep}/>
     </>
   )
 }

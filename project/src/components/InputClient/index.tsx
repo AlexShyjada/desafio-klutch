@@ -12,7 +12,7 @@ export default function InputClient() {
             type="number"
           />
         </label>
-        <button>Calcular</button>
+        <button>Buscar</button>
       </div>
     </section>
   )
