@@ -1,0 +1,48 @@
+.inputSimulacao{
+  h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--blue-secundary);
+    font-weight: 700;
+  }
+  .inputGroup{
+    display: flex;
+    margin: 3rem auto 5rem auto;
+    width: max-content;
+    label{
+      input{
+        border-radius: 0.5rem 0 0 0.5rem;
+        width: 50rem;
+        padding: 2rem 1rem;
+        font-size: 2rem;
+        color: var(--tipography);
+        background-color: var(--background);
+        border: 2px solid var(--background);
+        
+        &:focus {
+          outline: 0;
+          border: 2px solid var(--orange-primary);
+        }
+      }
+    }
+    button{
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      background-color: var(--blue-secundary);
+      color: white;
+      transition: 0.3s;
+
+      &:hover{
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
