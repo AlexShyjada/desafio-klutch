@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function InputClient() {
+export function CostumerInput() {
   return (
     <section id="InputSimulacao" className={style.inputSimulacao}>
       <h2>Busque o Cliente</h2>

@@ -7,7 +7,7 @@ interface IHero {
   imgHeight: number;
 }
 
-export default function Hero(props: IHero) {
+export function Hero(props: IHero) {
 
   const {title, imgURL, imgWidth, imgHeight} = props
 

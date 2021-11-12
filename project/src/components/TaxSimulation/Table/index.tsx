@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function Table() {
+export function Table() {
   return (
     <section id="Table" className={style.table}>
       <h2 className="container">Tabela padrão</h2>

@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function InputSimulacao() {
+export function SimulationInput() {
   return (
     <section id="InputSimulacao" className={style.inputSimulacao}>
       <h2>Valor Desejado</h2>

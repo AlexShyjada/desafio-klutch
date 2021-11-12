@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function ClientFound() {
+export function CostumerInformationFound() {
   return (
     <section className={style.clientInfoContainer}>
       <p>Cliente encontrado:</p>
