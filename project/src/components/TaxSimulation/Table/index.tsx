@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
+import { api } from '../../../services/api'
 import style from './style.module.scss'
 
+
 export function Table() {
+  
+  useEffect(() =>{
+    api.get('rateTable')
+      .then(data => console.log(data))
+  }, [])
   return (
     <section id="Table" className={style.table}>
       <h2 className="container">Tabela padrão</h2>

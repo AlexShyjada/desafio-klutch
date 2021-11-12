@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import {useState} from 'react'
 import Head from 'next/head'
+import {createServer} from 'miragejs'
 import {
   Hero,
   Footer,
@@ -15,6 +16,31 @@ import {
 
 const Home: NextPage = () => {
   const [formStep, setFormStep] = useState(1)
+
+  createServer({
+    routes(){
+      this.namespace = 'api'
+  
+      this.get('/rateTable', () => {
+        return [
+          {
+            "id": 1,
+            "name": "Plano padrão",
+            "installments": [
+              {
+                "id": 1,
+                "installments": 1,
+                "installmentInterest": 100,
+                "installmentValue": 444.00,
+                "fullValue": 444.00,
+                "comission": 1.33
+              },
+            ]
+          }
+        ]
+      })
+    }
+  })
 
   return (
     <>
