@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function CredtCardForm() {
+export function CreditCardForm() {
   return (
     <section id="CreditCardForm" className={`${style.creditCardForm} container`} >
       <form>

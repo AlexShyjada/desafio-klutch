@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-export default function PaymentModality() {
+export function PaymentModality() {
   return (
     <section id="PaymentModality" className={`${style.paymentModality} container`}>
       <h2>Escolha a modalidade:</h2>

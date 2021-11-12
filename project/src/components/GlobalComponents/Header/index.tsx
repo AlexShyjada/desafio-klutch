@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
 
-export default function Header() {
+export function Header() {
   return (
     <header id="Header" className={styles.header}>
       <button>

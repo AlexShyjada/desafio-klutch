@@ -4,7 +4,7 @@ interface IFooterProps {
   setFormStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function Footer(props: IFooterProps) {
+export function Footer(props: IFooterProps) {
 
   const {formStep, setFormStep} = props
 
