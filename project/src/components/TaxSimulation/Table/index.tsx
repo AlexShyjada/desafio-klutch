@@ -1,37 +1,62 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { api } from '../../../services/api'
 import style from './style.module.scss'
+import RateTable from './RateTable'
 
+interface IrateTables {
+  id: number;
+  name: string;
+  installments: [
+    {
+      id: number;
+      installments: number;
+      installmentInterest: number;
+      installmentValue: number;
+      fullValue: number;
+      comission: number;
+    }
+  ]
+}
 
 export function Table() {
+
+  const [rateTables, setRateTables] = useState<IrateTables[]>([])
   
   useEffect(() =>{
     api.get('rateTable')
-      .then(data => console.log(data))
+      .then(response => setRateTables(response.data.rateTables))
   }, [])
+  
   return (
     <section id="Table" className={style.table}>
-      <h2 className="container">Tabela padrão</h2>
-      <table className="container">
-        <thead>
-          <tr>
-            <th>Parcela</th>
-            <th>Juros da Parcela</th>
-            <th>Valor Parcela</th>
-            <th>Valor Total</th>
-            <th>Comissão Parceiro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>15%</td>
-            <td>R$1.115,00</td>
-            <td>R$1.115,00</td>
-            <td>R$1.115,00</td>
-          </tr>
-        </tbody>
-      </table>
+      {rateTables.map(rateTable => (
+          <div key={rateTable.id} className="tableGroup">
+            <h2 className="container">{rateTable.name}</h2>
+            <table className="container">
+              <thead>
+                <tr>
+                  <th>Parcela</th>
+                  <th>Juros da Parcela</th>
+                  <th>Valor Parcela</th>
+                  <th>Valor Total</th>
+                  <th>Comissão Parceiro</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rateTable.installments.map(installment => (
+                  <RateTable
+                    key={installment.id}
+                    installments={installment.installments}
+                    installmentInterest={installment.installmentInterest}
+                    installmentValue={installment.installmentValue}
+                    fullValue={installment.fullValue}
+                    comission={installment.comission}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
+      ))}
     </section>
   )
 }
