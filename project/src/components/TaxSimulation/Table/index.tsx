@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../../services/api'
 import style from './style.module.scss'
 import RateTable from './RateTable'
+import { useEffect, useState } from 'react'
+import { api } from '../../../services/api'
 
 interface IrateTables {
   id: number;
@@ -20,12 +20,14 @@ interface IrateTables {
 
 export function Table() {
 
+
   const [rateTables, setRateTables] = useState<IrateTables[]>([])
-  
+    
   useEffect(() =>{
     api.get('rateTable')
       .then(response => setRateTables(response.data.rateTables))
   }, [])
+
   
   return (
     <section id="Table" className={style.table}>

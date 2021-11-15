@@ -11,3 +11,6 @@ export * from "./CostumerSearch/CostumerInformationFound/index";
 export * from "./CostumerSearch/CostumerInput/index";
 
 export * from "./PaymentModality/index";
+
+
+export * from "./LendingContext";

@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import {useState} from 'react'
 import Head from 'next/head'
-import '../services/server'
+import {LendingContextSolicitationProvider} from '../components/LendingContext'
+import '../services/api'
 import {
   Hero,
   Footer,
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
   const [formStep, setFormStep] = useState(1)
 
   return (
-    <>
+    <LendingContextSolicitationProvider>
       <Head>
         <title>Desafio Klutch</title>
       </Head>
@@ -85,7 +86,7 @@ const Home: NextPage = () => {
       }
 
       <Footer formStep={formStep} setFormStep={setFormStep}/>
-    </>
+    </LendingContextSolicitationProvider>
   )
 }
 
