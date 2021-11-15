@@ -6,11 +6,9 @@ import '../services/api'
 import {
   Hero,
   Footer,
-  SimulationInput,
-  Table,
+  TaxSimulation,
   CreditCardForm,
-  CostumerInput,
-  CostumerInformationFound,
+  CostumerSearch,
   PaymentModality,
 } from '../components'
 
@@ -33,8 +31,7 @@ const Home: NextPage = () => {
                 imgWidth={225}
                 imgHeight={115}
               />
-              <SimulationInput/>
-              <Table/>
+              <TaxSimulation/>
             </>
           : null
       }
@@ -49,8 +46,7 @@ const Home: NextPage = () => {
                 imgWidth={225}
                 imgHeight={115}
               />
-              <CostumerInput/>
-              <CostumerInformationFound/>
+              <CostumerSearch/>
             </>
           : null
       }
