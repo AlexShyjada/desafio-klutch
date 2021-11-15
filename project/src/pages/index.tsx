@@ -25,12 +25,7 @@ const Home: NextPage = () => {
         formStep == 1 
           ? 
             <>
-              <Hero 
-                title="Simulação de Taxas"
-                imgURL="/assets/img_SimulacaoDeTaxas.svg"
-                imgWidth={225}
-                imgHeight={115}
-              />
+              <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/>
               <TaxSimulation/>
             </>
           : null
@@ -40,12 +35,7 @@ const Home: NextPage = () => {
         formStep == 2 
           ? 
             <>
-              <Hero 
-                title="Simulação de Taxas"
-                imgURL="/assets/img_SimulacaoDeTaxas.svg"
-                imgWidth={225}
-                imgHeight={115}
-              />
+              <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225}imgHeight={115}/>
               <CostumerSearch/>
             </>
           : null
@@ -55,12 +45,7 @@ const Home: NextPage = () => {
         formStep == 3 
           ? 
             <>
-              <Hero 
-                title="Simulação de Taxas"
-                imgURL="/assets/img_SimulacaoDeTaxas.svg"
-                imgWidth={225}
-                imgHeight={115}
-              />
+              <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/>
               <CreditCardForm/>
             </>
           : null
@@ -70,12 +55,7 @@ const Home: NextPage = () => {
         formStep == 4 
           ? 
             <>
-              <Hero 
-                title="Simulação de Taxas"
-                imgURL="/assets/img_SimulacaoDeTaxas.svg"
-                imgWidth={225}
-                imgHeight={115}
-              />
+              <Hero title="Simulação de Taxas" imgURL="/assets/img_SimulacaoDeTaxas.svg" imgWidth={225} imgHeight={115}/>
               <PaymentModality/>
             </>
           : null
