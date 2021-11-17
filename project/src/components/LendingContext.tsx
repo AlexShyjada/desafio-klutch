@@ -9,7 +9,10 @@ import {
 interface ISolicitationData {
   solicitationId: number;
   clientId: number;
+  cardName: string;
   cardNumber: number;
+  cardMaxDate: string;
+  cardCode: number;
   rateTableId: number;
   installmentId: number;
   desiredValue: number;
@@ -40,7 +43,10 @@ export function LendingContextSolicitationProvider({
   const InicialValue = {
     solicitationId: 0,
     clientId: 0,
+    cardName: '',
     cardNumber: 0,
+    cardMaxDate: '',
+    cardCode: 0,
     rateTableId: 0,
     installmentId: 0,
     desiredValue: 0,

@@ -15,12 +15,12 @@ interface IClient {
   };
 }
 
-interface ICostumerSearch {
+interface ICostumerSearchProps {
   formStep: number;
   setFormStep: Dispatch<SetStateAction<number>>;
 }
 
-export function CostumerSearch(props: ICostumerSearch) {
+export function CostumerSearch(props: ICostumerSearchProps) {
 
   const {formStep, setFormStep} = props
 

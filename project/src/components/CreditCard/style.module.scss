@@ -1,5 +1,8 @@
 .creditCardForm{
-  margin-bottom: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   form{
     display: grid;
     gap: 2.5rem;
@@ -27,11 +30,36 @@
             background-color: var(--background);
             
             &:focus{
-              outline: 2px solid var(--orange-primary)
+              outline: 2px solid var(--orange-primary);
+            }
+
+            &.cardImgFront, &.cardImgBack, &.cardSelfie{
+              cursor: not-allowed;
+            }
+            
+            &.cardImgFront::-webkit-file-upload-button,
+            &.cardImgBack::-webkit-file-upload-button, 
+            &.cardSelfie::-webkit-file-upload-button {
+              cursor: not-allowed;
             }
           }
         }
       }
+    }
+  }
+
+  button{
+    cursor: pointer;
+    margin: 8rem auto 8rem auto;
+    border-radius: 0.5rem;
+    padding: 2rem 8rem;
+    color: white;
+    font-size: 4rem;
+    background-color: var(--blue-primary);
+    transition: 0.3s;
+
+    &:hover{
+      filter: brightness(0.9);
     }
   }
 

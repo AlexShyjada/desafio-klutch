@@ -58,7 +58,7 @@ const Home: NextPage = () => {
             imgWidth={225}
             imgHeight={115}
           />
-          <CreditCardForm />
+          <CreditCardForm formStep={formStep} setFormStep={setFormStep}/>
         </>
       ) : null}
 
