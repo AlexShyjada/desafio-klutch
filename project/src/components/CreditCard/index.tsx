@@ -1,8 +1,11 @@
-import style from './style.module.scss'
+import style from "./style.module.scss";
 
 export function CreditCardForm() {
   return (
-    <section id="CreditCardForm" className={`${style.creditCardForm} container`} >
+    <section
+      id="CreditCardForm"
+      className={`${style.creditCardForm} container`}
+    >
       <form>
         <div className="formCollum">
           <div className="inputGroup">
@@ -29,21 +32,13 @@ export function CreditCardForm() {
           <div className="inputGroup">
             <label>
               Data de validade do cartão
-              <input
-                id="cardMaxDate"
-                type="text"
-                placeholder="Ex. 09/10"
-              />
+              <input id="cardMaxDate" type="text" placeholder="Ex. 09/10" />
             </label>
           </div>
           <div className="inputGroup">
             <label>
               Código de segurança do cartão
-              <input
-                id="cardCode"
-                type="text"
-                placeholder="Ex. 123"
-              />
+              <input id="cardCode" type="text" placeholder="Ex. 123" />
             </label>
           </div>
         </div>
@@ -80,9 +75,12 @@ export function CreditCardForm() {
               />
             </label>
           </div>
-          <p>Atenção: As fotos devem estar legíveis, com todas as informações visíveis do cartão.</p>
+          <p>
+            Atenção: As fotos devem estar legíveis, com todas as informações
+            visíveis do cartão.
+          </p>
         </div>
       </form>
     </section>
-  )
+  );
 }

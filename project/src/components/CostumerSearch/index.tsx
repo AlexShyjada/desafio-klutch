@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../services/api'
-import style from './style.module.scss'
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import style from "./style.module.scss";
 
 interface IClient {
   id: number;
@@ -11,29 +11,28 @@ interface IClient {
     label: string;
     accountTypeLabel: string;
     accountNumber: string;
-  }
+  };
 }
 
 export function CostumerSearch() {
-  const [clients, setClients] = useState<IClient[]>([])
-  const [clientsFound, setClientsFound] = useState<Number[]>([])
-  const [inputAmount, setInputAmount] = useState('')
-  
-  useEffect(() =>{
-    api.get('clients')
-      .then(response => setClients(response.data.clients))
-  }, [])
-  
-  function SearchClient () {
-    let clientFound = []
-    
-    for(let i = 0; i < clients.length; i++ ) {
-      if (clients[i].cpf ===  inputAmount){
-        clientFound.push(clients[i].id)
+  const [clients, setClients] = useState<IClient[]>([]);
+  const [clientsFound, setClientsFound] = useState<Number[]>([]);
+  const [inputAmount, setInputAmount] = useState("");
+
+  useEffect(() => {
+    api.get("clients").then((response) => setClients(response.data.clients));
+  }, []);
+
+  function SearchClient() {
+    let clientFound = [];
+
+    for (let i = 0; i < clients.length; i++) {
+      if (clients[i].cpf === inputAmount) {
+        clientFound.push(clients[i].id);
       }
     }
 
-    setClientsFound(clientFound)
+    setClientsFound(clientFound);
   }
 
   return (
@@ -61,5 +60,5 @@ export function CostumerSearch() {
         <button onClick={CostumerSearch}>Solicitar</button>
       </section>
     </>
-  )
+  );
 }

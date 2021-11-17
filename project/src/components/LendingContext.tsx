@@ -1,54 +1,64 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react'
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 
 interface ISolicitationData {
   solicitationId: number;
   clientId: number;
+  cardNumber: number;
+  rateTableId: number;
+  installmentId: number;
+  desiredValue: number;
+  totalLoan: number;
+  installments: number;
   installmentInterest: number;
   installmentInterestValue: number;
   comission: number;
   comissionValue: number;
   installmentValue: number;
-  cardNumber: string;
-  desiredValue: number;
-  totalLoan: number;
-  rateTableId: number;
-  installmentId: number;
 }
 
-interface ILendingContextSolicitationProviderProps{
+interface ILendingContextSolicitationProviderProps {
   children: ReactNode;
 }
-interface ICreateContext{
+interface ICreateContext {
   solicitationData: ISolicitationData;
   setSolicitationData: Dispatch<SetStateAction<ISolicitationData>>;
 }
 
-export const LendingContextSolicitation = createContext({} as ICreateContext)
+export const LendingContextSolicitation = createContext({} as ICreateContext);
 
-export function LendingContextSolicitationProvider({children}: ILendingContextSolicitationProviderProps){
-  
+export function LendingContextSolicitationProvider({
+  children,
+}: ILendingContextSolicitationProviderProps) {
   const InicialValue = {
     solicitationId: 0,
     clientId: 0,
+    cardNumber: 0,
+    rateTableId: 0,
+    installmentId: 0,
+    desiredValue: 0,
+    totalLoan: 0,
+    installments: 0,
     installmentInterest: 0,
     installmentInterestValue: 0,
     comission: 0,
     comissionValue: 0,
     installmentValue: 0,
-    cardNumber: '',
-    desiredValue: 0,
-    totalLoan: 0,
-    rateTableId: 0,
-    installmentId: 0,
-  } as ISolicitationData
-  
-  const [solicitationData, setSolicitationData] = useState<ISolicitationData>(InicialValue)
-  
-  // 
+  } as ISolicitationData;
+
+  const [solicitationData, setSolicitationData] =
+    useState<ISolicitationData>(InicialValue);
 
   return (
-    <LendingContextSolicitation.Provider value={{solicitationData, setSolicitationData}}>
+    <LendingContextSolicitation.Provider
+      value={{ solicitationData, setSolicitationData }}
+    >
       {children}
     </LendingContextSolicitation.Provider>
-  )
+  );
 }
