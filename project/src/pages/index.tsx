@@ -70,7 +70,7 @@ const Home: NextPage = () => {
             imgWidth={225}
             imgHeight={115}
           />
-          <PaymentModality />
+          <PaymentModality formStep={formStep} setFormStep={setFormStep}/>
         </>
       ) : null}
     </LendingContextSolicitationProvider>

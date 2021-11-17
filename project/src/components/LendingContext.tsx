@@ -13,6 +13,7 @@ interface ISolicitationData {
   cardNumber: number;
   cardMaxDate: string;
   cardCode: number;
+  paymentModality: string;
   rateTableId: number;
   installmentId: number;
   desiredValue: number;
@@ -47,6 +48,7 @@ export function LendingContextSolicitationProvider({
     cardNumber: 0,
     cardMaxDate: '',
     cardCode: 0,
+    paymentModality: '',
     rateTableId: 0,
     installmentId: 0,
     desiredValue: 0,
