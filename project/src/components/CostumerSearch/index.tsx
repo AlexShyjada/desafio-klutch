@@ -1,6 +1,41 @@
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
 import style from './style.module.scss'
 
+interface IClient {
+  id: number;
+  name: string;
+  phone: string;
+  cpf: string;
+  bank: {
+    label: string;
+    accountTypeLabel: string;
+    accountNumber: string;
+  }
+}
+
 export function CostumerSearch() {
+  const [clients, setClients] = useState<IClient[]>([])
+  const [clientsFound, setClientsFound] = useState<Number[]>([])
+  const [inputAmount, setInputAmount] = useState('')
+  
+  useEffect(() =>{
+    api.get('clients')
+      .then(response => setClients(response.data.clients))
+  }, [])
+  
+  function SearchClient () {
+    let clientFound = []
+    
+    for(let i = 0; i < clients.length; i++ ) {
+      if (clients[i].cpf ===  inputAmount){
+        clientFound.push(clients[i].id)
+      }
+    }
+
+    setClientsFound(clientFound)
+  }
+
   return (
     <>
       <section id="InputSimulacao" className={style.inputSimulacao}>
@@ -10,10 +45,12 @@ export function CostumerSearch() {
             <input
               id="inputAmount"
               placeholder="Digite o CPF desejado"
-              type="number"
+              type="string"
+              value={inputAmount}
+              onChange={(e) => setInputAmount(e.target.value)}
             />
           </label>
-          <button>Buscar</button>
+          <button onClick={SearchClient}>Buscar</button>
         </div>
       </section>
 
@@ -21,7 +58,7 @@ export function CostumerSearch() {
         <p>Cliente encontrado:</p>
         <span className={style.cpfInfo}>074.119.055-93</span>
         <span className={style.userName}>Lara Test</span>
-        <button>Solicitar</button>
+        <button onClick={CostumerSearch}>Solicitar</button>
       </section>
     </>
   )

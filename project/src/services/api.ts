@@ -7,7 +7,9 @@ export const api = axios.create({
 
 createServer({
   models: {
-    rateTable: Model,
+    rateTables: Model,
+    clients: Model,
+    solicitations: Model,
   },
 
   seeds(server){
@@ -20,18 +22,12 @@ createServer({
             {
               id: 1,
               installments: 1,
-              installmentInterest: 20.5,
-              installmentValue: 1338.76,
-              fullValue: 2677.51,
-              comission: 455.51
+              installmentInterest: 10,
             },
             {
               id: 2,
               installments: 2,
-              installmentInterest: 20.5,
-              installmentValue: 1338.76,
-              fullValue: 2677.51,
-              comission: 455.51
+              installmentInterest: 20,
             },
           ]
         },
@@ -40,20 +36,14 @@ createServer({
           name: "Tabela 2",
           installments: [
             {
-              id: 1,
+              id: 3,
               installments: 1,
-              installmentInterest: 20.5,
-              installmentValue: 1338.76,
-              fullValue: 2677.51,
-              comission: 455.51
+              installmentInterest: 15,
             },
             {
-              id: 2,
+              id: 4,
               installments: 2,
-              installmentInterest: 20.5,
-              installmentValue: 1338.76,
-              fullValue: 2677.51,
-              comission: 455.51
+              installmentInterest: 25,
             },
           ]
         }
@@ -90,12 +80,12 @@ createServer({
   routes(){
     this.namespace = 'api'
 
-    this.get('/rateTable', () => {
-      return this.schema.all('rateTable')
+    this.get('/rateTables', () => {
+      return this.schema.all('rateTables')
     })
 
-    this.get('/rateTable', () => {
-      return this.schema.all('rateTable')
+    this.get('/clients', () => {
+      return this.schema.all('clients')
     })
 
     this.get('/solicitations', () => {
