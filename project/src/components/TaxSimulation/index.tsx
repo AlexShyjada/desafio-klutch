@@ -69,36 +69,41 @@ export function TaxSimulation() {
         </div>
       </section>
 
-      <section id="Table" className={style.table}>
-        {rateTables.map((rateTable) => (
-          <div key={rateTable.id} className="tableGroup">
-            <h2 className="container">{rateTable.name}</h2>
-            <table className="container">
-              <thead>
-                <tr>
-                  <th>Parcela</th>
-                  <th>Juros da Parcela</th>
-                  <th>Valor Parcela</th>
-                  <th>Valor Total</th>
-                  <th>Comissão Parceiro</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rateTable.installments.map((installment) => (
-                  <Installment
-                    key={installment.id}
-                    installmentId={installment.id}
-                    rateTableId={rateTable.id}
-                    installments={installment.installments}
-                    installmentInterest={installment.installmentInterest}
-                    desiredValue={solicitationData.desiredValue}
-                  />
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ))}
-      </section>
+      {
+
+        solicitationData.desiredValue === 0 ? "" :
+        <section id="Table" className={style.table}>
+          {rateTables.map((rateTable) => (
+            <div key={rateTable.id} className="tableGroup">
+              <h2 className="container">{rateTable.name}</h2>
+              <table className="container">
+                <thead>
+                  <tr>
+                    <th>Parcela</th>
+                    <th>Juros da Parcela</th>
+                    <th>Valor Parcela</th>
+                    <th>Valor Total</th>
+                    <th>Comissão Parceiro</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rateTable.installments.map((installment) => (
+                    <Installment
+                      key={installment.id}
+                      installmentId={installment.id}
+                      rateTableId={rateTable.id}
+                      installments={installment.installments}
+                      installmentInterest={installment.installmentInterest}
+                      desiredValue={solicitationData.desiredValue}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </section>
+      }
+
     </>
   );
 }

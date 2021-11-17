@@ -46,6 +46,7 @@ export function CostumerSearch() {
               placeholder="Digite o CPF desejado"
               type="string"
               value={inputAmount}
+              maxLength={11}
               onChange={(e) => setInputAmount(e.target.value)}
             />
           </label>
@@ -53,12 +54,16 @@ export function CostumerSearch() {
         </div>
       </section>
 
-      <section className={style.clientInfoContainer}>
-        <p>Cliente encontrado:</p>
-        <span className={style.cpfInfo}>074.119.055-93</span>
-        <span className={style.userName}>Lara Test</span>
-        <button onClick={CostumerSearch}>Solicitar</button>
-      </section>
+      {
+        clientsFound.length <= 0 ? "" :
+        <section className={style.clientInfoContainer}>
+          <p>Cliente encontrado:</p>
+          <span className={style.cpfInfo}>074.119.055-93</span>
+          <span className={style.userName}>Lara Test</span>
+          <button onClick={CostumerSearch}>Solicitar</button>
+        </section>
+      }
+
     </>
   );
 }
