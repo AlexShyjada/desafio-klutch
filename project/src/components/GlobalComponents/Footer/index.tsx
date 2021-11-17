@@ -13,16 +13,18 @@ interface IrateTables {
     }
   ];
 }
+
 interface IFooterProps {
   formStep: number;
   setFormStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export function Footer(props: IFooterProps) {
-  const { formStep, setFormStep } = props;
+
+  const {formStep, setFormStep} = props
 
   const [rateTables, setRateTables] = useState<IrateTables[]>([]);
-  const { solicitationData } = useContext(LendingContextSolicitation);
+  const {solicitationData} = useContext(LendingContextSolicitation);
 
   const plan = rateTables.map((table) =>
     table.id === solicitationData.rateTableId ? table.name : ""
@@ -42,24 +44,23 @@ export function Footer(props: IFooterProps) {
   }, []);
 
   function handleAdvanceToNewStep() {
-    formStep < 6 ? setFormStep(formStep + 1) : null;
-  }
-
-  function handleReturnToPreviousStep() {
-    formStep > 1 ? setFormStep(formStep - 1) : null;
+    setFormStep(formStep + 1)
   }
 
   return (
-    <footer id="Footer" className={style.footer}>
-      <div className="container">
-        <button onClick={handleReturnToPreviousStep}>Voltar</button>
-        <div className="content">
-          <p>
-            Plano selecionado: {plan} | Parcelas: {solicitationData.installments} | Valor da Parcela: R$ {solicitationData.installmentValue}
-          </p>
-        </div>
-        <button onClick={handleAdvanceToNewStep}>Avançar</button>
-      </div>
-    </footer>
+    <>
+      {solicitationData.installmentId === 0? "" :
+        <footer id="Footer" className={style.footer}>
+          <div className="container">
+            <div className="content">
+              <p>
+                Plano selecionado: {plan} | Parcelas: {solicitationData.installments} | Valor da Parcela: R$ {solicitationData.installmentValue}
+              </p>
+            </div>
+            <button onClick={handleAdvanceToNewStep}>Avançar</button>
+          </div>
+        </footer>
+      }
+    </>
   );
 }

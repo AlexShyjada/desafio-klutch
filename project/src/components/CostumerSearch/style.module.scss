@@ -26,6 +26,7 @@
       }
     }
     button{
+      cursor: pointer;
       width: 150px;
       display: flex;
       align-items: center;
@@ -72,6 +73,7 @@
   }
 
   button{
+    cursor: pointer;
     border-radius: 0.5rem;
     padding: 1.5rem;
     font-weight: 700;

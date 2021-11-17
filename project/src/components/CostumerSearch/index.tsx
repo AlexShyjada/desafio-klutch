@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext, Dispatch, SetStateAction } from "react";
 import { api } from "../../services/api";
 import style from "./style.module.scss";
+import { LendingContextSolicitation } from "../LendingContext";
 
 interface IClient {
-  id: number;
+  clientId: number;
   name: string;
   phone: string;
   cpf: string;
@@ -14,25 +15,42 @@ interface IClient {
   };
 }
 
-export function CostumerSearch() {
+interface ICostumerSearch {
+  formStep: number;
+  setFormStep: Dispatch<SetStateAction<number>>;
+}
+
+export function CostumerSearch(props: ICostumerSearch) {
+
+  const {formStep, setFormStep} = props
+
   const [clients, setClients] = useState<IClient[]>([]);
-  const [clientsFound, setClientsFound] = useState<Number[]>([]);
+  const [clientsFound, setClientsFound] = useState<IClient[]>([]);
   const [inputAmount, setInputAmount] = useState("");
+
+  const { solicitationData, setSolicitationData } = useContext(
+    LendingContextSolicitation
+  );
 
   useEffect(() => {
     api.get("clients").then((response) => setClients(response.data.clients));
   }, []);
 
   function SearchClient() {
-    let clientFound = [];
+    let clientFound = [] as IClient[];
 
     for (let i = 0; i < clients.length; i++) {
       if (clients[i].cpf === inputAmount) {
-        clientFound.push(clients[i].id);
+        clientFound.push(clients[i]);
       }
     }
 
     setClientsFound(clientFound);
+  }
+
+  function handleSelectClient(id: number) {
+    setSolicitationData((oldState) => {return {...oldState, clientId: id};});
+    setFormStep(formStep + 1)
   }
 
   return (
@@ -56,12 +74,18 @@ export function CostumerSearch() {
 
       {
         clientsFound.length <= 0 ? "" :
-        <section className={style.clientInfoContainer}>
-          <p>Cliente encontrado:</p>
-          <span className={style.cpfInfo}>074.119.055-93</span>
-          <span className={style.userName}>Lara Test</span>
-          <button onClick={CostumerSearch}>Solicitar</button>
-        </section>
+
+        clientsFound.map(client => {
+          return(
+            <section key={client.clientId} className={style.clientInfoContainer}>
+              <p>Cliente encontrado:</p>
+              <span className={style.cpfInfo}>{client.cpf}</span>
+              <span className={style.userName}>{client.name}</span>
+              <button onClick={() => handleSelectClient(client.clientId)}>Solicitar</button>
+            </section>
+          )
+        })
+
       }
 
     </>

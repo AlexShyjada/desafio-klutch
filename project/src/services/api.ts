@@ -16,7 +16,7 @@ createServer({
     server.db.loadData({
       rateTables: [
         {
-          id: 1,
+          clientId: 1,
           name: "Tabela 1",
           installments: [
             {
@@ -50,10 +50,10 @@ createServer({
       ],
       clients: [
         {
-          id: 1,
+          clientId: 1,
           name: "Teste Cliente",
           phone: "71991234567",
-          cpf: "99999999999",
+          cpf: "11111111111",
           bank: {
             label: "003 - Banco da Amazonia S.A.",
             accountTypeLabel: "Conta Corrente",
@@ -61,10 +61,98 @@ createServer({
           },
         },
         {
-          id: 2,
+          clientId: 2,
           name: "Teste Cliente 2",
           phone: "71991234567",
+          cpf: "22222222222",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 3,
+          name: "Teste Cliente 3",
+          phone: "71991234567",
+          cpf: "33333333333",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 4,
+          name: "Teste Cliente 4",
+          phone: "71991234567",
+          cpf: "44444444444",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 5,
+          name: "Teste Cliente 5",
+          phone: "71991234567",
+          cpf: "55555555555",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 6,
+          name: "Teste Cliente 6",
+          phone: "71991234567",
+          cpf: "66666666666",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 7,
+          name: "Teste Cliente 7",
+          phone: "71991234567",
+          cpf: "77777777777",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 8,
+          name: "Teste Cliente 8",
+          phone: "71991234567",
           cpf: "88888888888",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 9,
+          name: "Teste Cliente 9",
+          phone: "71991234567",
+          cpf: "99999999999",
+          bank: {
+            label: "001 - Nu Pagamentos S.A.",
+            accountTypeLabel: "Conta Corrente",
+            accountNumber: "378282246310005"
+          },
+        },
+        {
+          clientId: 10,
+          name: "Teste Cliente 10",
+          phone: "71991234567",
+          cpf: "99999999999",
           bank: {
             label: "001 - Nu Pagamentos S.A.",
             accountTypeLabel: "Conta Corrente",

@@ -35,6 +35,8 @@ export const LendingContextSolicitation = createContext({} as ICreateContext);
 export function LendingContextSolicitationProvider({
   children,
 }: ILendingContextSolicitationProviderProps) {
+
+  
   const InicialValue = {
     solicitationId: 0,
     clientId: 0,
@@ -56,7 +58,7 @@ export function LendingContextSolicitationProvider({
 
   return (
     <LendingContextSolicitation.Provider
-      value={{ solicitationData, setSolicitationData }}
+      value={{ solicitationData, setSolicitationData}}
     >
       {children}
     </LendingContextSolicitation.Provider>
