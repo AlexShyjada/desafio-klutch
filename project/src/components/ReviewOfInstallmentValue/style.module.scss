@@ -1,0 +1,43 @@
+.table{
+  width: 100%;
+  margin-bottom: 14rem;
+  div{
+    h2{
+      padding: 0.6rem;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      background: var(--background);
+      color: var(--blue-secundary)
+    }
+    table{
+      margin-bottom: 8rem;
+      border-spacing: 0;
+      thead{
+        tr{
+          th{
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--typography);
+            border: 0.2rem solid #E5E5E5;
+            background: var(--background);
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: 2.5rem;
+            color: var(--typography);
+            border: 0.1rem solid #E5E5E5;
+          }
+        }
+      }
+    }
+  }
+}

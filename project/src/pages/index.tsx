@@ -13,6 +13,7 @@ import {
   CreditCardForm,
   CostumerSearch,
   PaymentModality,
+  ReviewOfInstallmentValue,
 } from "../components";
 
 const Home: NextPage = () => {
@@ -71,6 +72,18 @@ const Home: NextPage = () => {
             imgHeight={115}
           />
           <PaymentModality formStep={formStep} setFormStep={setFormStep}/>
+        </>
+      ) : null}
+
+      {formStep == 5 ? (
+        <>
+          <Hero
+            title="Simulação de Taxas"
+            imgURL="/assets/img_SimulacaoDeTaxas.svg"
+            imgWidth={225}
+            imgHeight={115}
+          />
+          <ReviewOfInstallmentValue formStep={formStep} setFormStep={setFormStep}/>
         </>
       ) : null}
     </LendingContextSolicitationProvider>
