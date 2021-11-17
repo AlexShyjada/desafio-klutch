@@ -1,0 +1,97 @@
+.inputSimulacao{
+  h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--blue-secundary);
+    font-weight: 700;
+  }
+  .inputGroup{
+    display: flex;
+    margin: 3rem auto 5rem auto;
+    width: max-content;
+    label{
+      input{
+        border-radius: 0.5rem 0 0 0.5rem;
+        width: 50rem;
+        padding: 2rem 1rem;
+        font-size: 2rem;
+        color: var(--tipography);
+        background-color: var(--background);
+        border: 2px solid var(--background);
+        
+        &:focus {
+          outline: 0;
+          border: 2px solid var(--orange-primary);
+        }
+      }
+    }
+    button{
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:1rem;
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      background-color: var(--orange-primary);
+      color: white;
+      transition: 0.3s;
+
+      &:hover{
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
+
+.table{
+  width: 100%;
+  margin-bottom: 14rem;
+  div{
+    h2{
+      padding: 0.6rem;
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      background: var(--background);
+      color: var(--blue-secundary)
+    }
+    table{
+      margin-bottom: 8rem;
+      border-spacing: 0;
+      thead{
+        tr{
+          th{
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--typography);
+            border: 0.2rem solid #E5E5E5;
+            background: var(--background);
+          }
+        }
+      }
+      tbody{
+        tr{
+          cursor: pointer;
+          td{
+            padding: 1rem 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: 2.5rem;
+            color: var(--typography);
+            border: 0.1rem solid #E5E5E5;
+          }
+
+          &.unselected{
+            background: rgba(239, 223, 75, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

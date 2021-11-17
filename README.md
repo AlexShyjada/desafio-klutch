@@ -15,6 +15,7 @@ Esse é um desafio da [Klutch Tecnologia](https://www.klutch.com.br/) para que e
 - [Next](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/install)
+- [Axios](https://axios-http.com/docs/intro)
 - [Mirage Js](https://miragejs.com/)
 
 ---
