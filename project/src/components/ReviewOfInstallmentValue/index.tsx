@@ -21,7 +21,6 @@ interface IrateTables {
     }
   ];
 }
-
 interface IReviewOfInstallmentValueProps {
   formStep: number;
   setFormStep: Dispatch<SetStateAction<number>>;
@@ -32,11 +31,8 @@ export function ReviewOfInstallmentValue(
 ) {
   const { formStep, setFormStep } = props;
 
-  const [simulationValue, setSimulationValue] = useState(0);
   const [rateTables, setRateTables] = useState<IrateTables[]>([]);
-  const { solicitationData, setSolicitationData } = useContext(
-    LendingContextSolicitation
-  );
+  const { solicitationData, setSolicitationData } = useContext(LendingContextSolicitation);
 
   useEffect(() => {
     api
@@ -44,30 +40,57 @@ export function ReviewOfInstallmentValue(
       .then((response) => setRateTables(response.data.rateTables));
   }, []);
 
-  function handleCreateNewSimulation() {
-    if (simulationValue < 300 || simulationValue > 10000) {
-      alert(
-        "digite um valor acima de R$300,00 ou um calor abaixo de R$ 10.000"
-      );
-      setSimulationValue(0);
-    } else {
-      setSolicitationData((oldState) => {
-        return {
-          ...oldState,
-          desiredValue: simulationValue,
-          installments: 0,
-          installmentValue: 0,
-          comission: 0,
-          installmentId: 0,
-          rateTableId: 0,
-        };
-      });
-      setSimulationValue(0);
-    }
+  function handleConcluded() {
+    setFormStep(formStep + 1)
   }
+
   return (
     <>
-      <section></section>
+      <section className="container">
+        <div className={style.inputGroup}>
+          <label>
+            Tabela
+            <select name="" id="">
+              <option value="">Option 1</option>
+              <option value="">Option 2</option>
+              <option value="">Option 3</option>
+            </select>
+          </label>
+
+          <label>
+            Valor desejado:
+            <input type="text"/>
+          </label>
+
+          <label>
+            Valor Total do Empréstimo:
+            <input type="text"/>
+          </label>
+
+          <label>
+            Parcelas:
+            <select name="" id="">
+              <option value="">Option 1</option>
+              <option value="">Option 2</option>
+              <option value="">Option 3</option>
+            </select>
+          </label>
+
+          <label>
+            Valor da parcela:
+            <select name="" id="">
+              <option value="">Option 1</option>
+              <option value="">Option 2</option>
+              <option value="">Option 3</option>
+            </select>
+          </label>
+
+          <div className={style.btnGroup}>
+            <button>Automático</button>
+            <button>Manual</button>
+          </div>
+        </div>
+      </section>
 
       <section id="Table" className={style.table}>
         {rateTables.map((rateTable) => (
@@ -105,6 +128,12 @@ export function ReviewOfInstallmentValue(
           </>
         ))}
       </section>
+      <button
+        onClick={handleConcluded}
+        className={style.btnComplete}
+      >
+        Concluir
+      </button>
     </>
   );
 }
