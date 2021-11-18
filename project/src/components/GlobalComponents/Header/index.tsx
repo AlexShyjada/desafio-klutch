@@ -11,7 +11,7 @@ export function Header() {
         <path d="M5 30H35" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
       </button>
-      <a href="https://www.klutch.com.br/">
+      <a href="https://www.klutch.com.br/" target="_blank" rel="noreferrer">
         <Image
           src="/assets/logo_Klutch.svg"
           alt="Picture of the author"
