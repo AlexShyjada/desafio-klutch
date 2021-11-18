@@ -17,7 +17,7 @@ import {
 
 const Home: NextPage = () => {
 
-  const [formStep, setFormStep] = useState(1)
+  const [formStep, setFormStep] = useState(7)
 
   return (
     <LendingContextSolicitationProvider>
