@@ -3,8 +3,10 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useEffect,
   useState,
 } from "react";
+import { api } from "../services/api";
 
 interface ISolicitationData {
   solicitationId: number;
@@ -26,6 +28,18 @@ interface ISolicitationData {
   installmentValue: number;
 }
 
+interface IrateTables {
+  id: number;
+  name: string;
+  installments: [
+    {
+      id: number;
+      installments: number;
+      installmentInterest: number;
+    }
+  ];
+}
+
 interface ILendingContextSolicitationProviderProps {
   children: ReactNode;
 }
@@ -40,7 +54,6 @@ export function LendingContextSolicitationProvider({
   children,
 }: ILendingContextSolicitationProviderProps) {
 
-  
   const InicialValue = {
     solicitationId: 0,
     clientId: 0,
