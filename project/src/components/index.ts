@@ -6,4 +6,7 @@ export * from "./TaxSimulation/index";
 export * from "./CreditCard/index";
 export * from "./CostumerSearch/index";
 export * from "./PaymentModality/index";
+export * from "./ReviewOfInstallmentValue/index";
+export * from "./SolicitationResume/index";
+export * from "./SolicitationDetails/index";
 export * from "./LendingContext";

@@ -1,14 +1,17 @@
 .paymentModality{
+  width: max-content;
   margin-bottom: 14rem;
   display: flex;
   gap: 1rem;
   flex-direction: column;
+
   h2{
     font-size: 3.5rem;
     color: var(--blue-primary);
     font-weight: 400;
     text-align: center;
   }
+
   .credtCard{
     border-radius: 0.5rem;
     cursor: pointer;
@@ -21,15 +24,17 @@
     font-size: 3.5rem;
     font-weight: 700;
   }
+
   span{
     color: var(--typography);
     font-size: 3.5rem;
     margin: 0 auto;
   }
+  
   .credtCardDisable{
+    cursor: not-allowed;
     border-radius: 0.5rem;
     opacity: 0.5;
-    cursor: pointer;
     margin: 0 auto;
     text-align: center;
     width: 40rem;
@@ -38,5 +43,11 @@
     padding: 2rem;
     font-size: 3.5rem;
     font-weight: 700;
+  }
+
+  p{
+    text-align: right;
+    font-size: 2.5rem;
+    color: #777777;
   }
 }

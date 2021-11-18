@@ -15,9 +15,7 @@ export function CreditCardForm(props: ICostumerSearchProps) {
   const [cardMaxDate, setCardMaxDate] = useState("");
   const [cardCode, setCardCode] = useState(0);
 
-  const { solicitationData, setSolicitationData } = useContext(
-    LendingContextSolicitation
-  );
+  const { setSolicitationData } = useContext(LendingContextSolicitation);
 
   function handleSetCardInformationOnContext() {
     if (

@@ -1,0 +1,64 @@
+.solicitationResume{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  h2{
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--blue-secundary);
+    text-align: center;
+  }
+
+  p{
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--blue-secundary);
+    text-align: center;
+  }
+
+  div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2rem 2rem;
+      background-color: #E8FFE4;
+      width: 100%;
+
+      span{
+        font-size: 2rem;
+        color: var(--blue-secundary);
+      }
+    }
+  }
+
+  button{
+    cursor: pointer;
+    border-radius: 0.5rem;
+    display: block;
+    width: max-content;
+    padding: 2rem 5rem;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background-color: var(--blue-secundary);
+    transition: 0.3s;
+
+    &:hover{
+      filter: brightness(0.9);
+    }
+  }
+
+  .sistemaCredfica{
+    margin-bottom: 8rem;
+    font-size: 2rem;
+    color: var(--blue-secundary);
+  }
+}

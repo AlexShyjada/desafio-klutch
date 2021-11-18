@@ -3,8 +3,10 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useEffect,
   useState,
 } from "react";
+import { api } from "../services/api";
 
 interface ISolicitationData {
   solicitationId: number;
@@ -13,6 +15,7 @@ interface ISolicitationData {
   cardNumber: number;
   cardMaxDate: string;
   cardCode: number;
+  paymentModality: string;
   rateTableId: number;
   installmentId: number;
   desiredValue: number;
@@ -23,6 +26,18 @@ interface ISolicitationData {
   comission: number;
   comissionValue: number;
   installmentValue: number;
+}
+
+interface IrateTables {
+  id: number;
+  name: string;
+  installments: [
+    {
+      id: number;
+      installments: number;
+      installmentInterest: number;
+    }
+  ];
 }
 
 interface ILendingContextSolicitationProviderProps {
@@ -39,7 +54,6 @@ export function LendingContextSolicitationProvider({
   children,
 }: ILendingContextSolicitationProviderProps) {
 
-  
   const InicialValue = {
     solicitationId: 0,
     clientId: 0,
@@ -47,6 +61,7 @@ export function LendingContextSolicitationProvider({
     cardNumber: 0,
     cardMaxDate: '',
     cardCode: 0,
+    paymentModality: '',
     rateTableId: 0,
     installmentId: 0,
     desiredValue: 0,
