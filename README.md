@@ -27,6 +27,9 @@ Esse é um desafio da [Klutch Tecnologia](https://www.klutch.com.br/) para que e
 # Não lembra se possui o node? Execute node -v no seu terminal
 $ node -v
 
+# Execute git checkout dev para entrar na branch de desenvolvimento
+$ git checkout dev
+
 # Execute yarn install para instalar as dependências
 $ yarn install
 
