@@ -10,7 +10,6 @@ interface IPaymentModality {
 export function PaymentModality(props: IPaymentModality) {
 
   const {formStep, setFormStep} = props
-
   const { setSolicitationData } = useContext(LendingContextSolicitation);
 
   function handleSelectPaymentModalityAsCreditCard(){
@@ -44,7 +43,3 @@ export function PaymentModality(props: IPaymentModality) {
     </section>
   );
 }
-function setSolicitationData(arg0: (oldState: any) => any) {
-  throw new Error("Function not implemented.");
-}
-
